@@ -15,6 +15,12 @@
 		7667055820E988820087513F /* FocusPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667055720E988820087513F /* FocusPrototypeUITests.swift */; };
 		76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22C620E98BE300EEF22E /* TasksViewController.swift */; };
 		76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BB22C720E98BE300EEF22E /* TasksViewController.xib */; };
+		76BB22D020E98D9F00EEF22E /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22CE20E98D9F00EEF22E /* TaskCollectionViewCell.swift */; };
+		76BB22D120E98D9F00EEF22E /* TaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BB22CF20E98D9F00EEF22E /* TaskCollectionViewCell.xib */; };
+		76BB22D420E9903F00EEF22E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22D320E9903F00EEF22E /* UIView+Extension.swift */; };
+		76BB22D620E9950700EEF22E /* DateOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22D520E9950700EEF22E /* DateOperations.swift */; };
+		76BB22DA20E99A1A00EEF22E /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22D820E99A1A00EEF22E /* CreateTaskViewController.swift */; };
+		76BB22DB20E99A1A00EEF22E /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BB22D920E99A1A00EEF22E /* CreateTaskViewController.xib */; };
 		82E4603EB2CD044BEA1BAD8B /* Pods_FocusPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EBE7FB9D809F2456EB1711 /* Pods_FocusPrototype.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +57,12 @@
 		7667055920E988820087513F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76BB22C620E98BE300EEF22E /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		76BB22C720E98BE300EEF22E /* TasksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
+		76BB22CE20E98D9F00EEF22E /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		76BB22CF20E98D9F00EEF22E /* TaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCollectionViewCell.xib; sourceTree = "<group>"; };
+		76BB22D320E9903F00EEF22E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		76BB22D520E9950700EEF22E /* DateOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOperations.swift; sourceTree = "<group>"; };
+		76BB22D820E99A1A00EEF22E /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		76BB22D920E99A1A00EEF22E /* CreateTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTaskViewController.xib; sourceTree = "<group>"; };
 		A9EBE7FB9D809F2456EB1711 /* Pods_FocusPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9270BDD2CCCF9B85A047D27 /* Pods-FocusPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FocusPrototype/Pods-FocusPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +151,7 @@
 		76BB22C520E98BCF00EEF22E /* TasksViewController */ = {
 			isa = PBXGroup;
 			children = (
+				76BB22D220E98DA800EEF22E /* TaskCollectionViewCell */,
 				76BB22C620E98BE300EEF22E /* TasksViewController.swift */,
 				76BB22C720E98BE300EEF22E /* TasksViewController.xib */,
 			);
@@ -148,6 +161,7 @@
 		76BB22CA20E98BE800EEF22E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76BB22D720E99A0600EEF22E /* CreateTaskViewController */,
 				76BB22C520E98BCF00EEF22E /* TasksViewController */,
 			);
 			path = Controller;
@@ -156,6 +170,7 @@
 		76BB22CB20E98BEC00EEF22E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				76BB22D320E9903F00EEF22E /* UIView+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,8 +178,27 @@
 		76BB22CC20E98BF100EEF22E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76BB22D520E9950700EEF22E /* DateOperations.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		76BB22D220E98DA800EEF22E /* TaskCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				76BB22CE20E98D9F00EEF22E /* TaskCollectionViewCell.swift */,
+				76BB22CF20E98D9F00EEF22E /* TaskCollectionViewCell.xib */,
+			);
+			path = TaskCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		76BB22D720E99A0600EEF22E /* CreateTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76BB22D820E99A1A00EEF22E /* CreateTaskViewController.swift */,
+				76BB22D920E99A1A00EEF22E /* CreateTaskViewController.xib */,
+			);
+			path = CreateTaskViewController;
 			sourceTree = "<group>";
 		};
 		78F1DC60F60F2AC687FFCB0B /* Frameworks */ = {
@@ -290,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7667054220E988810087513F /* LaunchScreen.storyboard in Resources */,
+				76BB22D120E98D9F00EEF22E /* TaskCollectionViewCell.xib in Resources */,
 				7667053F20E988810087513F /* Assets.xcassets in Resources */,
+				76BB22DB20E99A1A00EEF22E /* CreateTaskViewController.xib in Resources */,
 				76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +374,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7667053520E988800087513F /* AppDelegate.swift in Sources */,
+				76BB22D020E98D9F00EEF22E /* TaskCollectionViewCell.swift in Sources */,
 				7667053D20E988800087513F /* FocusPrototype.xcdatamodeld in Sources */,
+				76BB22D420E9903F00EEF22E /* UIView+Extension.swift in Sources */,
 				76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */,
+				76BB22D620E9950700EEF22E /* DateOperations.swift in Sources */,
+				76BB22DA20E99A1A00EEF22E /* CreateTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

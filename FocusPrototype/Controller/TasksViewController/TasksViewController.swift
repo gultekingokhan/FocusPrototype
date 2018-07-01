@@ -10,26 +10,44 @@ import UIKit
 
 class TasksViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var todayLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        let nib = UINib(nibName: "TaskCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "TaskCollectionViewCell")
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        todayLabel.text = DateOperations.today(format: "EEEE, dd MMMM")
+        
+    }
+    @IBAction func createTaskButtonTapped(_ sender: Any) {
+    }
+    
+}
+
+extension TasksViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: TaskCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskCollectionViewCell", for: indexPath) as! TaskCollectionViewCell
+//        cell.wordLabel.text = "Word"
+        
+        return cell
     }
     
 
-    /*
-    // MARK: - Navigation
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.size.width - 2 * 8
+        return CGSize(width: width, height: 80)
+    }    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension TasksViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 22
     }
-    */
-
+    
 }

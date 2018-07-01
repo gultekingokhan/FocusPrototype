@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TaskCollectionViewCell" customModule="FocusPrototype" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8D-yL-wm8">
+                        <rect key="frame" x="16" y="8" width="288" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-W2-k6r">
+                                <rect key="frame" x="12" y="22" width="268" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="alZ-W2-k6r" firstAttribute="top" secondItem="l8D-yL-wm8" secondAttribute="top" constant="22" id="8jM-Rx-Huk"/>
+                            <constraint firstAttribute="bottom" secondItem="alZ-W2-k6r" secondAttribute="bottom" constant="21.5" id="BuR-th-utz"/>
+                            <constraint firstAttribute="trailing" secondItem="alZ-W2-k6r" secondAttribute="trailing" constant="8" id="QFe-1k-8Tx"/>
+                            <constraint firstItem="alZ-W2-k6r" firstAttribute="leading" secondItem="l8D-yL-wm8" secondAttribute="leading" constant="12" id="kNG-Vx-LtW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="l8D-yL-wm8" secondAttribute="bottom" constant="8" id="D2I-En-Olo"/>
+                <constraint firstItem="l8D-yL-wm8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="S91-tA-HYJ"/>
+                <constraint firstAttribute="trailing" secondItem="l8D-yL-wm8" secondAttribute="trailing" constant="16" id="h7f-N7-X4N"/>
+                <constraint firstItem="l8D-yL-wm8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="kNf-SQ-sjg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="356" height="76"/>
+            <connections>
+                <outlet property="containerView" destination="l8D-yL-wm8" id="AA7-lA-aib"/>
+                <outlet property="nameLabel" destination="alZ-W2-k6r" id="WkW-on-53n"/>
+            </connections>
+            <point key="canvasLocation" x="-562" y="-47"/>
+        </collectionViewCell>
+    </objects>
+</document>
