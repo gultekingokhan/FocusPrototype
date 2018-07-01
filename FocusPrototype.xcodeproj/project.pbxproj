@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7667053520E988800087513F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667053420E988800087513F /* AppDelegate.swift */; };
-		7667053720E988800087513F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667053620E988800087513F /* ViewController.swift */; };
-		7667053A20E988800087513F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7667053820E988800087513F /* Main.storyboard */; };
 		7667053D20E988800087513F /* FocusPrototype.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7667053B20E988800087513F /* FocusPrototype.xcdatamodeld */; };
 		7667053F20E988810087513F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7667053E20E988810087513F /* Assets.xcassets */; };
 		7667054220E988810087513F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7667054020E988810087513F /* LaunchScreen.storyboard */; };
 		7667054D20E988820087513F /* FocusPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667054C20E988820087513F /* FocusPrototypeTests.swift */; };
 		7667055820E988820087513F /* FocusPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667055720E988820087513F /* FocusPrototypeUITests.swift */; };
+		76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22C620E98BE300EEF22E /* TasksViewController.swift */; };
+		76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BB22C720E98BE300EEF22E /* TasksViewController.xib */; };
+		82E4603EB2CD044BEA1BAD8B /* Pods_FocusPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EBE7FB9D809F2456EB1711 /* Pods_FocusPrototype.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		742A9DBCE55B1D448682BDA5 /* Pods-FocusPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-FocusPrototype/Pods-FocusPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		7667053120E988800087513F /* FocusPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7667053420E988800087513F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7667053620E988800087513F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7667053920E988800087513F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7667053C20E988800087513F /* FocusPrototype.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FocusPrototype.xcdatamodel; sourceTree = "<group>"; };
 		7667053E20E988810087513F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7667054120E988810087513F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,10 @@
 		7667055320E988820087513F /* FocusPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7667055720E988820087513F /* FocusPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusPrototypeUITests.swift; sourceTree = "<group>"; };
 		7667055920E988820087513F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76BB22C620E98BE300EEF22E /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		76BB22C720E98BE300EEF22E /* TasksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
+		A9EBE7FB9D809F2456EB1711 /* Pods_FocusPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9270BDD2CCCF9B85A047D27 /* Pods-FocusPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FocusPrototype/Pods-FocusPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E4603EB2CD044BEA1BAD8B /* Pods_FocusPrototype.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				7667054B20E988820087513F /* FocusPrototypeTests */,
 				7667055620E988820087513F /* FocusPrototypeUITests */,
 				7667053220E988800087513F /* Products */,
+				8E16284100D655510D7FCF65 /* Pods */,
+				78F1DC60F60F2AC687FFCB0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				7667053420E988800087513F /* AppDelegate.swift */,
-				7667053620E988800087513F /* ViewController.swift */,
-				7667053820E988800087513F /* Main.storyboard */,
+				76BB22CC20E98BF100EEF22E /* Model */,
+				76BB22CB20E98BEC00EEF22E /* View */,
+				76BB22CA20E98BE800EEF22E /* Controller */,
 				7667053E20E988810087513F /* Assets.xcassets */,
 				7667054020E988810087513F /* LaunchScreen.storyboard */,
 				7667054320E988810087513F /* Info.plist */,
@@ -128,6 +136,54 @@
 			path = FocusPrototypeUITests;
 			sourceTree = "<group>";
 		};
+		76BB22C520E98BCF00EEF22E /* TasksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76BB22C620E98BE300EEF22E /* TasksViewController.swift */,
+				76BB22C720E98BE300EEF22E /* TasksViewController.xib */,
+			);
+			path = TasksViewController;
+			sourceTree = "<group>";
+		};
+		76BB22CA20E98BE800EEF22E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76BB22C520E98BCF00EEF22E /* TasksViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76BB22CB20E98BEC00EEF22E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76BB22CC20E98BF100EEF22E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78F1DC60F60F2AC687FFCB0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9EBE7FB9D809F2456EB1711 /* Pods_FocusPrototype.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E16284100D655510D7FCF65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9270BDD2CCCF9B85A047D27 /* Pods-FocusPrototype.debug.xcconfig */,
+				742A9DBCE55B1D448682BDA5 /* Pods-FocusPrototype.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7667055C20E988820087513F /* Build configuration list for PBXNativeTarget "FocusPrototype" */;
 			buildPhases = (
+				7B8CB5B2DB7F3C3DD66D6948 /* [CP] Check Pods Manifest.lock */,
 				7667052D20E988800087513F /* Sources */,
 				7667052E20E988800087513F /* Frameworks */,
 				7667052F20E988800087513F /* Resources */,
@@ -234,7 +291,7 @@
 			files = (
 				7667054220E988810087513F /* LaunchScreen.storyboard in Resources */,
 				7667053F20E988810087513F /* Assets.xcassets in Resources */,
-				7667053A20E988800087513F /* Main.storyboard in Resources */,
+				76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +311,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B8CB5B2DB7F3C3DD66D6948 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FocusPrototype-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7667052D20E988800087513F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7667053720E988800087513F /* ViewController.swift in Sources */,
 				7667053520E988800087513F /* AppDelegate.swift in Sources */,
 				7667053D20E988800087513F /* FocusPrototype.xcdatamodeld in Sources */,
+				76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +375,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7667053820E988800087513F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7667053920E988800087513F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7667054020E988810087513F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +502,7 @@
 		};
 		7667055D20E988820087513F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9270BDD2CCCF9B85A047D27 /* Pods-FocusPrototype.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +521,7 @@
 		};
 		7667055E20E988820087513F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742A9DBCE55B1D448682BDA5 /* Pods-FocusPrototype.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
