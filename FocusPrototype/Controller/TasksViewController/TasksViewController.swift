@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TasksViewController: UIViewController {
 
@@ -18,10 +19,64 @@ class TasksViewController: UIViewController {
         let nib = UINib(nibName: "TaskCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "TaskCollectionViewCell")
         
-
         todayLabel.text = DateOperations.today(format: "EEEE, dd MMMM")
+    
+        getUsers()
         
     }
+    
+    func getUsers() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let users = try context.fetch(request)
+            for user in users as! [NSManagedObject] {
+                print("result:\n\n\(user.value(forKey: "firstname") as! String)")
+                
+                print("\n\n\(users)")
+                
+            }
+            
+//            removeAllUsers()
+
+        } catch let error as NSError {
+            print("Fetching failed: \(error.userInfo)")
+        }
+    }
+    
+    func removeAllUsers() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let users = try context.fetch(request)
+            for user in users as! [NSManagedObject] {
+                context.delete(user)
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                print("Failed saving")
+            }
+            
+        } catch let error as NSError {
+            print("Fetching failed: \(error.userInfo)")
+        }
+        
+    }
+    
+    
     @IBAction func createTaskButtonTapped(_ sender: Any) {
         let createTaskVC = CreateTaskViewController(nibName: "CreateTaskViewController", bundle: nil)
         present(createTaskVC, animated: true, completion: nil)
