@@ -23,6 +23,8 @@ class TasksViewController: UIViewController {
         
     }
     @IBAction func createTaskButtonTapped(_ sender: Any) {
+        let createTaskVC = CreateTaskViewController(nibName: "CreateTaskViewController", bundle: nil)
+        present(createTaskVC, animated: true, completion: nil)
     }
     
 }
