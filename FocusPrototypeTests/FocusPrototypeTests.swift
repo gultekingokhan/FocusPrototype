@@ -37,6 +37,19 @@ class FocusPrototypeTests: XCTestCase {
         XCTAssertNotEqual(result, mock_tomorrowResult, "Date cannot be tomorrow's date.")
     }
     
+    func testCreateTask() {
+        
+        let title = "An amazing title!"
+        let note = "You can detail your title here but It is not required."
+        let category = "Like a tag or heading"
+        
+        let task = Task()
+        task.create(title: title, note: note, category: category)
+        
+        
+    }
+    
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

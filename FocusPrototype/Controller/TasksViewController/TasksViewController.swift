@@ -70,8 +70,8 @@ class TasksViewController: UIViewController {
                 print("Failed saving")
             }
             
-        } catch let error as NSError {
-            print("Fetching failed: \(error.userInfo)")
+        } catch let error {
+            print("Fetching failed: \(error.localizedDescription)")
         }
         
     }
