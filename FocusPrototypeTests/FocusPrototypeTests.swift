@@ -23,18 +23,17 @@ class FocusPrototypeTests: XCTestCase {
     
     func testToday() {
         
-        let mock_tomorrow = Date(timeIntervalSinceNow: 30*3600)
-        let mock_today = Date()
+        var mock_date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
-        let mock_todayResult = formatter.string(from: mock_today)
-        let mock_tomorrowResult = formatter.string(from: mock_tomorrow)
+        mock_date = formatter.date(from: "Tuesday, 10 July")!
+        let mock_todayResult = formatter.string(from: mock_date)
         
         let result = DateOperations.today(format: formatter.dateFormat)
         
         XCTAssertNotNil(formatter.dateFormat, "Date format cannot be nil.")
-        XCTAssertEqual(result, mock_todayResult, "Date must be today's date.")
-        XCTAssertNotEqual(result, mock_tomorrowResult, "Date cannot be tomorrow's date.")
+        XCTAssertNotEqual(result, mock_todayResult, "Date must be a different day from today's date")
+
     }
     
     func testCreateTask() {
