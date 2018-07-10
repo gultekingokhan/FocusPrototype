@@ -11,10 +11,35 @@ import CoreData
 
 class Task: NSObject {
 
-    public var id: String!
-    public var title: String!
-    public var note: String?
-    public var category: String?
+    private var _id: String
+    private var _title: String
+    private var _note: String
+    private var _category: String
+    
+    var id: String {
+        return _id
+    }
+    
+    var title: String {
+        return _title
+    }
+    
+    var note: String {
+        return _note
+    }
+
+    var category: String {
+        return _category
+    }
+    
+    
+    init(title: String, note: String, category: String) {
+        //don't forget to assign id here!s
+        _id = ""
+        _title = title
+        _note = note
+        _category = category
+    }
     
     private var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
