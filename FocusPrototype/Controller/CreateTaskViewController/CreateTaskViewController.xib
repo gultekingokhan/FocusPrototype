@@ -13,6 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateTaskViewController" customModule="FocusPrototype" customModuleProvider="target">
             <connections>
+                <outlet property="noteTextField" destination="qag-Qt-zs7" id="4cn-HD-S5s"/>
+                <outlet property="titleTextField" destination="8J3-tl-6VS" id="psO-49-Z4X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +30,7 @@
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="gLW-wF-1mR"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task Title" placeholder="Write your task's title here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8J3-tl-6VS">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write your task's title here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8J3-tl-6VS">
                     <rect key="frame" x="16" y="70" width="343" height="21"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
@@ -56,6 +58,13 @@
                     <rect key="frame" x="135" y="204" width="105" height="30"/>
                     <state key="normal" title="Send tomorrow"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-L1-sNe">
+                    <rect key="frame" x="159" y="258" width="56" height="30"/>
+                    <state key="normal" title="CREATE"/>
+                    <connections>
+                        <action selector="createButtonTapped:" destination="-1" eventType="touchUpInside" id="U9a-cU-czV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -66,8 +75,10 @@
                 <constraint firstItem="A4i-6E-CMx" firstAttribute="top" secondItem="qag-Qt-zs7" secondAttribute="bottom" constant="18" id="DlW-Mh-EHT"/>
                 <constraint firstItem="8J3-tl-6VS" firstAttribute="top" secondItem="4mj-IM-pXD" secondAttribute="bottom" constant="12" id="FBA-LT-hkw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8J3-tl-6VS" secondAttribute="trailing" constant="16" id="JGx-bl-zPn"/>
+                <constraint firstItem="NJV-L1-sNe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rc5-hh-eic"/>
                 <constraint firstItem="Yxs-ym-R6f" firstAttribute="top" secondItem="mhw-oG-Vfa" secondAttribute="top" id="Usl-Tw-vEx"/>
                 <constraint firstItem="lOP-sk-sNd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1/3" id="Vdm-yT-avK"/>
+                <constraint firstItem="NJV-L1-sNe" firstAttribute="top" secondItem="mhw-oG-Vfa" secondAttribute="bottom" constant="24" id="XX7-MU-gog"/>
                 <constraint firstItem="lOP-sk-sNd" firstAttribute="top" secondItem="mhw-oG-Vfa" secondAttribute="top" id="YK3-Yy-FkT"/>
                 <constraint firstItem="4mj-IM-pXD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="aih-cc-VKR"/>
                 <constraint firstItem="8J3-tl-6VS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cba-jq-BoV"/>
@@ -79,7 +90,7 @@
                 <constraint firstItem="A4i-6E-CMx" firstAttribute="top" secondItem="qag-Qt-zs7" secondAttribute="bottom" constant="18" id="umw-PS-0HR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-7" y="46"/>
+            <point key="canvasLocation" x="-278" y="-7"/>
         </view>
     </objects>
 </document>

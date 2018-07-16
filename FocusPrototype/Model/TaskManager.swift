@@ -20,29 +20,36 @@ class TaskManager: NSObject {
         return appDelegate.persistentContainer.viewContext
     }
     
-    private var tasks = [Task]()
+    var data = [Task]()
+    
+    var tasksWasCalledAfterLoadingData: Bool = false
+    
+    override init() {
+        super.init()
+    }
+    
     
     func addTask(task: Task) {
         taskCount += 1
-        tasks.append(task)
+        data.append(task)
     }
     
     func removeTask(index: Int) {
         taskCount -= 1
-        tasks.remove(at: index)
+        data.remove(at: index)
     }
     
     func task(index: Int) -> Task {
         taskCount += 1
-        return tasks[index]
+        return data[index]
     }
     
     func updateTask(task: Task, index: Int) {
         taskCount += 1
-        tasks[index] = task
+        data[index] = task
     }
     
-    func saveTask(task: Task, failure: @escaping (_ error: Error?) -> Void) {
+    func save(task: Task, failure: @escaping (_ error: Error?) -> Void) {
         
         savedTasksCount += 1
         let entity = NSEntityDescription.entity(forEntityName: "Tasks", in: context)
@@ -59,28 +66,34 @@ class TaskManager: NSObject {
         }
     }
     
-    func getTasks() -> [Any] {
+    func tasks() -> [Task] {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
         //request.predicate = NSPredicate(format: "age = %@", "12")
         request.returnsObjectsAsFaults = false
     
         do {
+            let results = try context.fetch(request)
+            var tasks: [Task] = []
             
-            let tasks = try context.fetch(request)
-            return tasks
-            /*
-            for task in tasks as! [NSManagedObject] {
-                
+            for result in results as! [NSManagedObject] {
+                let task = Task(title: result.value(forKey: "title") as! String,
+                                note: result.value(forKey: "note") as! String ,
+                                category: result.value(forKey: "category") as! String)
+                tasks.append(task)
             }
-             */
+            
+            return tasks
             
         } catch _ {
             return []
-            
         }
-        
-        
+    }
+    
+    func loadData(completed: @escaping () -> Void) {
+        data = self.tasks()
+        tasksWasCalledAfterLoadingData = true
+        completed()
     }
     /*
     func getUsers() {

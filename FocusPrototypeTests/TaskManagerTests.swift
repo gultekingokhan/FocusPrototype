@@ -68,27 +68,49 @@ class TaskManagerTests: XCTestCase {
         XCTAssertNotEqual(mockTask.title, taskQueried.title)
     }
     
-    func test_saveTask() {
+    /*  PSEUDO CODE:
+        1. call save method and test whether the method works properly
+        2. expect for fetching tasks
+        3. delete what you saved
+ 
+     */
+    
+    func test_save() {
         
-        sut.saveTask(task: mockTask) { (error) in
+        sut.save(task: mockTask) { (error) in
             
             if (error == nil) {
+                
+//                let expect = expectation(description: "background perform and wait")
+                XCTAssertEqual(self.sut.tasks().last?.title, self.mockTask.title)
                 XCTAssertEqual(self.sut.savedTasksCount, 1)
+
+                
             } else {
                 XCTAssertEqual(self.sut.savedTasksCount, 0)
             }
         }
     }
     
-    func test_getTasks() {
-
-        sut.saveTask(task: mockTask) { (error) in}
-        sut.saveTask(task: mockTask) { (error) in}
+    func test_loadData() {
         
-        _ = sut.getTasks() //without query
-
-        XCTAssertEqual(sut.savedTasksCount, 2)
+        sut.save(task: mockTask) { (_) in}
+        sut.loadData {
+            XCTAssertTrue(self.sut.tasksWasCalledAfterLoadingData, "Have to call tasks() method for loading data via Core Data.")
+        }
     }
     
+    /*
+    func test_tasks() {
+
+//        sut.save(task: mockTask) { (error) in}
+//        sut.save(task: mockTask) { (error) in}
+        
+        _ = sut.tasks() //without query
+
+        XCTAssertEqual(sut.savedTasksCount, 2)
+
+    }
+     */
 
 }

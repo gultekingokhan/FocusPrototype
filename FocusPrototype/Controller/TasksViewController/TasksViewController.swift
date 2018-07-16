@@ -13,6 +13,23 @@ class TasksViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var todayLabel: UILabel!
+    
+    let taskManager: TaskManager = TaskManager()
+    var loadDataWasCalled = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadDataWasCalled = true
+        taskManager.loadData {
+            print("Data has been loaded.")
+            /*for task in self.taskManager.data {
+                print("Task title: \(task.title)")
+            }*/
+            //self.collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +37,7 @@ class TasksViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "TaskCollectionViewCell")
         
         todayLabel.text = DateOperations.today(format: "EEEE, dd MMMM")
-    
-        getUsers()
-        
+
     }
     
     func getUsers() {
@@ -42,8 +57,6 @@ class TasksViewController: UIViewController {
                 print("\n\n\(users)")
                 
             }
-            
-//            removeAllUsers()
 
         } catch let error as NSError {
             print("Fetching failed: \(error.userInfo)")
@@ -90,6 +103,7 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDelegat
         
         let cell: TaskCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskCollectionViewCell", for: indexPath) as! TaskCollectionViewCell
 //        cell.wordLabel.text = "Word"
+        cell.nameLabel.text = taskManager.data[indexPath.row].title
         
         return cell
     }
@@ -104,7 +118,7 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDelegat
 extension TasksViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 22
+        return taskManager.data.count
     }
     
 }

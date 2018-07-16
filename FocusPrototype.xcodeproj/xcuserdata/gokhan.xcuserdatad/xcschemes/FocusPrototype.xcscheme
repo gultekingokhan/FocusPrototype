@@ -49,6 +49,16 @@
                ReferencedContainer = "container:FocusPrototype.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "764E7A5720F913A00017FED6"
+               BuildableName = "TasksViewControllerTests.xctest"
+               BlueprintName = "TasksViewControllerTests"
+               ReferencedContainer = "container:FocusPrototype.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
