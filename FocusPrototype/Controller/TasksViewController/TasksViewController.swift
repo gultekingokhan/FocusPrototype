@@ -23,6 +23,7 @@ class TasksViewController: UIViewController {
         loadDataWasCalled = true
         taskManager.loadData {
             print("Data has been loaded.")
+            self.collectionView.reloadData()
             /*for task in self.taskManager.data {
                 print("Task title: \(task.title)")
             }*/
@@ -37,7 +38,15 @@ class TasksViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "TaskCollectionViewCell")
         
         todayLabel.text = DateOperations.today(format: "EEEE, dd MMMM")
+        
 
+    }
+    
+    @IBAction func clearAll(_ sender: Any) {
+        taskManager.removeAll()
+        taskManager.loadData {
+            self.collectionView.reloadData()
+        }
     }
     
     func getUsers() {

@@ -95,58 +95,28 @@ class TaskManager: NSObject {
         tasksWasCalledAfterLoadingData = true
         completed()
     }
-    /*
-    func getUsers() {
+    
+    func removeAll() {
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
         request.returnsObjectsAsFaults = false
         
         do {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            
-            let users = try context.fetch(request)
-            for user in users as! [NSManagedObject] {
-                print("result:\n\n\(user.value(forKey: "firstname") as! String)")
-                
-                print("\n\n\(users)")
-                
+            let results = try context.fetch(request)
+
+            for result in results as! [NSManagedObject] {
+                context.delete(result)
             }
             
-            //            removeAllUsers()
+            do {
+                try context.save()
+            } catch {
+                print("Failed removing")
+            }
             
-        } catch let error as NSError {
-            print("Fetching failed: \(error.userInfo)")
-        }
-    }
- */
-    
-    
-    /*
-    public func create(title: String, note: String, category: String) {
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Tasks", in: context)
-        
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-        newUser.setValue(title, forKey: "title")
-        newUser.setValue(note, forKey: "note")
-        newUser.setValue(category, forKey: "category")
-        
-        do {
-            try context.save()
         } catch let error {
-            print("Failed saving: \(error.localizedDescription)")
+            print("Removing failed: \(error.localizedDescription)")
         }
         
     }
-    
-    public func get() {
-        
-    }
-    
-    public func fetch() {
-        
-    }
-    */
 }

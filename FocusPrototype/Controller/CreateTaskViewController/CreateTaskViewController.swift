@@ -37,10 +37,6 @@ class CreateTaskViewController: UIViewController {
         return true
     }
     
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func createButtonTapped(_ sender: Any) {
     
         if isReadyToSave() {
@@ -64,7 +60,9 @@ class CreateTaskViewController: UIViewController {
                 }
             }
         }
-    
     }
     
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

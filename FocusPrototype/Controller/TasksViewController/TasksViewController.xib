@@ -49,6 +49,13 @@
                         <action selector="createTaskButtonTapped:" destination="-1" eventType="touchUpInside" id="VtC-Ay-uo3"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOw-Sr-ML0">
+                    <rect key="frame" x="302" y="35" width="57" height="30"/>
+                    <state key="normal" title="Clear All"/>
+                    <connections>
+                        <action selector="clearAll:" destination="-1" eventType="touchUpInside" id="heN-1O-vkO"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -58,7 +65,9 @@
                 <constraint firstItem="8ND-bK-uJR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="BBZ-qd-Jy6"/>
                 <constraint firstItem="t4U-PX-aWN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NxP-Ch-BIa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="t4U-PX-aWN" secondAttribute="bottom" constant="20" id="Uy9-TY-UsL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cOw-Sr-ML0" secondAttribute="trailing" constant="16" id="aPl-Bj-SYc"/>
                 <constraint firstItem="8ND-bK-uJR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="di9-Q6-hid"/>
+                <constraint firstItem="cOw-Sr-ML0" firstAttribute="centerY" secondItem="8ND-bK-uJR" secondAttribute="centerY" id="gPd-dc-S2f"/>
                 <constraint firstItem="ryw-da-WqD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nIK-Gn-A4Z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
