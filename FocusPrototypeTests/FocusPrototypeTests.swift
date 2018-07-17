@@ -21,10 +21,33 @@ class FocusPrototypeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testToday() {
+        
+        var mock_date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd MMMM"
+        mock_date = formatter.date(from: "Tuesday, 10 July")!
+        let mock_todayResult = formatter.string(from: mock_date)
+        
+        let result = DateOperations.today(format: formatter.dateFormat)
+        
+        XCTAssertNotNil(formatter.dateFormat, "Date format cannot be nil.")
+        XCTAssertNotEqual(result, mock_todayResult, "Date must be a different day from today's date")
+
     }
+    /*DON'T FORGET TO CLEAN THESE METHODS HERE. YOU MIGHT CREATE DIFFERENT TEST CLASSES FOR TESTING EACH CLASS*/
+    func test_initTaskWithParameters() {
+        
+        let title = "An amazing title!"
+        let note = "You can detail your title here but It is not required."
+        let category = "Like a tag or heading"
+        
+        let testTask = Task(title: title, note: note, category: category)
+        
+        XCTAssertNotNil(testTask)
+        XCTAssertEqual(testTask.title, "An amazing title!")
+    }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
