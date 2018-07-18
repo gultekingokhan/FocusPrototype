@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let tasksVC = TasksViewController(nibName: "TasksViewController", bundle: nil)
-        window?.rootViewController = tasksVC
+        let navigationController = UINavigationController(rootViewController: tasksVC)
+        
+        navigationController.isNavigationBarHidden = true
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }

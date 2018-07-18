@@ -11,14 +11,12 @@ import CoreData
 
 class Task: NSObject {
 
-    private var _id: String
+    //private var _id: String
     private var _title: String
     private var _note: String
     private var _category: String
     
-    var id: String {
-        return _id
-    }
+    var id: String!
     
     var title: String {
         return _title
@@ -35,7 +33,7 @@ class Task: NSObject {
     
     init(title: String, note: String, category: String) {
         //don't forget to assign id here!s
-        _id = ""
+        //_id = ""
         _title = title
         _note = note
         _category = category

@@ -15,13 +15,20 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     
+    var isPresented = false
     let taskManager = TaskManager()
     
+    var task: Task?
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad()        
         
-        
+        if task != nil {
+            
+            self.titleTextField.text = task?.title
+            self.noteTextField.text = task?.note
+            
+        }
     }
     
     func isReadyToSave() -> Bool {
@@ -37,32 +44,61 @@ class CreateTaskViewController: UIViewController {
         return true
     }
     
+    func isUpdating() -> Bool{
+        
+        //update the task object, do not create.
+        if task != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     @IBAction func createButtonTapped(_ sender: Any) {
     
         if isReadyToSave() {
             
-            print("Note: \(noteTextField.text!)")
-            
-
-            let task = Task(title: titleTextField.text!,
+            let taskToSave = Task(title: titleTextField.text!,
                             note: noteTextField.text!,
                             category: "")
-            
-            taskManager.save(task: task) { (error) in
+
+            if isUpdating() {
+                taskToSave.id = (task?.id)!
+                taskManager.update(task: taskToSave) { (error) in
+                    self.handleAlertController(error: error)
+                }
+            } else {
                 
-                if error != nil {
-                    let alertController = UIAlertController(title: "Warning", message: "An error occured while saving task. Please try again.", preferredStyle: .alert)
-                    let dismissAction = UIAlertAction(title: "Warning", style: .default, handler: nil)
-                    alertController.addAction(dismissAction)
-                    self.present(alertController, animated: true, completion: nil)
-                } else {
-                    self.dismiss(animated: true, completion: nil)
+                taskManager.save(task: taskToSave) { (error) in
+                    self.handleAlertController(error: error)
                 }
             }
         }
     }
+
+    
+    func handleAlertController(error: Error?) {
+
+        if error != nil {
+            let alertController = UIAlertController(title: "Warning", message: "An error occured while saving task. Please try again.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Warning", style: .default, handler: nil)
+            alertController.addAction(dismissAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            if self.isPresented {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+    }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if isPresented {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

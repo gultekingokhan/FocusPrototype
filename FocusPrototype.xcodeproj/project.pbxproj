@@ -17,6 +17,8 @@
 		76761EA920F4FDDB00A0EE99 /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76761EA820F4FDDB00A0EE99 /* TaskManagerTests.swift */; };
 		767A53C320FC79FC00436CE1 /* CreateTaskViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A53C220FC79FC00436CE1 /* CreateTaskViewControllerTests.swift */; };
 		769C1D2C20EA2F09002D3534 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C1D2B20EA2F09002D3534 /* Task.swift */; };
+		76A0E5D720FE818A00B9D107 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0E5D520FE818A00B9D107 /* TaskDetailViewController.swift */; };
+		76A0E5D820FE818A00B9D107 /* TaskDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A0E5D620FE818A00B9D107 /* TaskDetailViewController.xib */; };
 		76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22C620E98BE300EEF22E /* TasksViewController.swift */; };
 		76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BB22C720E98BE300EEF22E /* TasksViewController.xib */; };
 		76BB22D020E98D9F00EEF22E /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB22CE20E98D9F00EEF22E /* TaskCollectionViewCell.swift */; };
@@ -54,6 +56,8 @@
 		76761EA820F4FDDB00A0EE99 /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
 		767A53C220FC79FC00436CE1 /* CreateTaskViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewControllerTests.swift; sourceTree = "<group>"; };
 		769C1D2B20EA2F09002D3534 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		76A0E5D520FE818A00B9D107 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		76A0E5D620FE818A00B9D107 /* TaskDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailViewController.xib; sourceTree = "<group>"; };
 		76BB22C620E98BE300EEF22E /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		76BB22C720E98BE300EEF22E /* TasksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksViewController.xib; sourceTree = "<group>"; };
 		76BB22CE20E98D9F00EEF22E /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 			path = FocusPrototypeTests;
 			sourceTree = "<group>";
 		};
+		76A0E5D420FE816000B9D107 /* TaskDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76A0E5D520FE818A00B9D107 /* TaskDetailViewController.swift */,
+				76A0E5D620FE818A00B9D107 /* TaskDetailViewController.xib */,
+			);
+			path = TaskDetailViewController;
+			sourceTree = "<group>";
+		};
 		76BB22C520E98BCF00EEF22E /* TasksViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		76BB22CA20E98BE800EEF22E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76A0E5D420FE816000B9D107 /* TaskDetailViewController */,
 				76BB22D720E99A0600EEF22E /* CreateTaskViewController */,
 				76BB22C520E98BCF00EEF22E /* TasksViewController */,
 			);
@@ -288,6 +302,7 @@
 			files = (
 				7667054220E988810087513F /* LaunchScreen.storyboard in Resources */,
 				76BB22D120E98D9F00EEF22E /* TaskCollectionViewCell.xib in Resources */,
+				76A0E5D820FE818A00B9D107 /* TaskDetailViewController.xib in Resources */,
 				7667053F20E988810087513F /* Assets.xcassets in Resources */,
 				76BB22DB20E99A1A00EEF22E /* CreateTaskViewController.xib in Resources */,
 				76BB22C920E98BE300EEF22E /* TasksViewController.xib in Resources */,
@@ -333,6 +348,7 @@
 				769C1D2C20EA2F09002D3534 /* Task.swift in Sources */,
 				7667053520E988800087513F /* AppDelegate.swift in Sources */,
 				76BB22D020E98D9F00EEF22E /* TaskCollectionViewCell.swift in Sources */,
+				76A0E5D720FE818A00B9D107 /* TaskDetailViewController.swift in Sources */,
 				7667053D20E988800087513F /* FocusPrototype.xcdatamodeld in Sources */,
 				76BB22D420E9903F00EEF22E /* UIView+Extension.swift in Sources */,
 				76BB22C820E98BE300EEF22E /* TasksViewController.swift in Sources */,

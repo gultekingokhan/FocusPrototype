@@ -54,6 +54,11 @@ class TaskManager: NSObject {
         savedTasksCount += 1
         let entity = NSEntityDescription.entity(forEntityName: "Tasks", in: context)
         let newTask = NSManagedObject(entity: entity!, insertInto: context)
+        
+        let objectID = newTask.objectID.uriRepresentation().absoluteString
+        print("Object ID: \(objectID)")
+        
+        newTask.setValue(objectID, forKey: "id")
         newTask.setValue(task.title, forKey: "title")
         newTask.setValue(task.note, forKey: "note")
         newTask.setValue(task.category, forKey: "category")
@@ -64,6 +69,36 @@ class TaskManager: NSObject {
         } catch let anError {
             failure(anError)
         }
+    }
+    
+    func update(task: Task, failure: @escaping (_ error: Error?) -> Void) {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
+        print("Task ID: \(task.id!)")
+        request.predicate = NSPredicate(format: "id = %@", task.id!)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                
+                for result in results as! [NSManagedObject] {
+ 
+//                    result.setValue(task.id!, forKey: "id")
+                    result.setValue(task.title, forKey: "title")
+                    result.setValue(task.note, forKey: "note")
+                    result.setValue(task.category, forKey: "category")
+                    
+                    
+                }
+            }
+            failure(nil)
+        } catch let anError {
+            print("errrrrror: \(anError)")
+            failure(anError)
+        }
+        
     }
     
     func tasks() -> [Task] {
@@ -80,6 +115,9 @@ class TaskManager: NSObject {
                 let task = Task(title: result.value(forKey: "title") as! String,
                                 note: result.value(forKey: "note") as! String ,
                                 category: result.value(forKey: "category") as! String)
+                print("Object ID before: \(result.value(forKey: "id") as! String)")
+                task.id = result.value(forKey: "id") as! String
+                //print("Object ID from the tasks: \(task.id))")
                 tasks.append(task)
             }
             

@@ -24,10 +24,6 @@ class TasksViewController: UIViewController {
         taskManager.loadData {
             print("Data has been loaded.")
             self.collectionView.reloadData()
-            /*for task in self.taskManager.data {
-                print("Task title: \(task.title)")
-            }*/
-            //self.collectionView.reloadData()
         }
     }
     
@@ -38,7 +34,6 @@ class TasksViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "TaskCollectionViewCell")
         
         todayLabel.text = DateOperations.today(format: "EEEE, dd MMMM")
-        
 
     }
     
@@ -48,59 +43,11 @@ class TasksViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    func getUsers() {
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            
-            let users = try context.fetch(request)
-            for user in users as! [NSManagedObject] {
-                print("result:\n\n\(user.value(forKey: "firstname") as! String)")
-                
-                print("\n\n\(users)")
-                
-            }
 
-        } catch let error as NSError {
-            print("Fetching failed: \(error.userInfo)")
-        }
-    }
-    
-    func removeAllUsers() {
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            
-            let users = try context.fetch(request)
-            for user in users as! [NSManagedObject] {
-                context.delete(user)
-            }
-            
-            do {
-                try context.save()
-            } catch {
-                print("Failed saving")
-            }
-            
-        } catch let error {
-            print("Fetching failed: \(error.localizedDescription)")
-        }
-        
-    }
-    
     
     @IBAction func createTaskButtonTapped(_ sender: Any) {
         let createTaskVC = CreateTaskViewController(nibName: "CreateTaskViewController", bundle: nil)
+        createTaskVC.isPresented = true
         present(createTaskVC, animated: true, completion: nil)
     }
     
@@ -121,7 +68,14 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.size.width - 2 * 8
         return CGSize(width: width, height: 80)
-    }    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let taskDetailVC = CreateTaskViewController(nibName: "CreateTaskViewController", bundle: nil)
+        taskDetailVC.isPresented = false
+        taskDetailVC.task = taskManager.data[indexPath.row]
+        navigationController?.pushViewController(taskDetailVC, animated: true)
+    }
 }
 
 extension TasksViewController: UICollectionViewDataSource {

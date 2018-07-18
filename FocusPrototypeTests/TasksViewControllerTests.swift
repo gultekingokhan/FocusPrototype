@@ -32,8 +32,4 @@ class TasksViewControllerTests: XCTestCase {
         }
     }
     
-    func test_viewDidLoad() {
-        XCTAssertTrue(sut.loadDataWasCalled, "loadData function MUST be called in viewDidLoad method.")
-    }
-    
 }
