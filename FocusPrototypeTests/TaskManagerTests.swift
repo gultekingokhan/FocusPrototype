@@ -35,7 +35,7 @@ class TaskManagerTests: XCTestCase {
         }
     }
     
-    
+    /*
     func test_createTask() {
         sut.addTask(task: mockTask)
         
@@ -67,6 +67,7 @@ class TaskManagerTests: XCTestCase {
         let taskQueried = sut.task(index: 0)
         XCTAssertNotEqual(mockTask.title, taskQueried.title)
     }
+    */
     
     /*  PSEUDO CODE:
         1. call save method and test whether the method works properly
@@ -88,7 +89,7 @@ class TaskManagerTests: XCTestCase {
                 XCTAssertEqual(self.sut.savedTasksCount, 0)
             }
             
-            self.sut.removeTask(index: 0)
+//            self.sut.removeTask(index: 0)
         }
     }
     

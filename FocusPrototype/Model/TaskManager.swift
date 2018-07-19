@@ -28,7 +28,7 @@ class TaskManager: NSObject {
         super.init()
     }
     
-    
+    /*
     func addTask(task: Task) {
         taskCount += 1
         data.append(task)
@@ -48,7 +48,7 @@ class TaskManager: NSObject {
         taskCount += 1
         data[index] = task
     }
-    
+    */
     func save(task: Task, failure: @escaping (_ error: Error?) -> Void) {
         
         savedTasksCount += 1
